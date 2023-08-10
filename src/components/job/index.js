@@ -42,8 +42,9 @@ export default function Job(props) {
 
   return (
     <>
-    {data?.map((item)=>(
-      <>
+
+     {data?.map((item)=>(
+      <> 
     <div className="job-tab">
       
          
@@ -51,39 +52,39 @@ export default function Job(props) {
       <div className="job-data">
       <p className="name">{item?.name}</p>
      
-        <p>Location: {props.data.location}</p>
+        <p>Location: {item?.location}</p>
         <div className="status">
-          <p>Posted on: {props.data.posted}</p>
-          <p>Status: {props.data.status}</p>
+          <p>Posted on: {item?.posted}</p>
+          <p>Status: {item?.status}</p>
         </div>
       </div>
-      <p className="applied">{props.data.applied} Applied</p>
-      <p className="applied">{props.data.jobViews} Job Views</p>
+      <p className="applied">{item?.applied} Applied</p>
+      <p className="applied">{item?.jobViews} Job Views</p>
       <div className="premium">
         <div
           className="days-left"
           style={{
-            backgroundColor: props.data.premium
+            backgroundColor: item?.premium
               ? "rgba(235, 202, 36, 0.1)"
-              : props.data.daysLeft > 2
+              : item?.daysLeft > 2
               ? "rgba(84, 189, 165, 0.18)"
               : "",
           }}
         >
           <p
             style={{
-              color: props.data.premium
+              color: item?.premium
                 ? "#C4A923"
-                : props.data.daysLeft > 2
+                : item?.daysLeft > 2
                 ? "#458677"
                 : "",
             }}
           >
-            {props.data.premium ? "Premium" : "Free"} • {props.data.daysLeft}{" "}
+            {item?.premium ? "Premium" : "Free"} • {item?.daysLeft}{" "}
             Days Left
           </p>
         </div>
-        {props.data.premium ? (
+        {item?.premium ? (
           <p>You are getting better visibility as this is a premium job post</p>
         ) : (
           <p>
@@ -113,7 +114,7 @@ export default function Job(props) {
     </div>
     </>
 
-))}
-</>
+ ))}
+ </>
   );
 }
